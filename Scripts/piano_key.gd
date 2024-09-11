@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: Label = $Label
+@export var pitch:int
 
 var bHeld = false
 

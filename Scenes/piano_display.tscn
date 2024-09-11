@@ -8,75 +8,100 @@
 script = ExtResource("1_qxgdy")
 
 [node name="Key48" parent="." instance=ExtResource("1_hn3wh")]
+pitch = 48
 
 [node name="Key50" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(32, 0)
+pitch = 50
 
 [node name="Key52" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(64, 0)
+pitch = 52
 
 [node name="Key53" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(96, 0)
+pitch = 53
 
 [node name="Key55" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(128, 0)
+pitch = 55
 
 [node name="Key57" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(160, 0)
+pitch = 57
 
 [node name="Key59" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(192, 0)
+pitch = 59
 
 [node name="Key49" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(16, -32)
+pitch = 49
 
 [node name="Key51" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(48, -32)
+pitch = 51
 
 [node name="Key54" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(112, -32)
+pitch = 54
 
 [node name="Key56" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(144, -32)
+pitch = 56
 
 [node name="Key58" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(176, -32)
+pitch = 58
 
 [node name="Key60" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(224, 0)
+pitch = 60
 
 [node name="Key62" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(256, 0)
+pitch = 62
 
 [node name="Key64" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(288, 0)
+pitch = 64
 
 [node name="Key65" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(320, 0)
+pitch = 65
 
 [node name="Key67" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(352, 0)
+pitch = 67
 
 [node name="Key69" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(384, 0)
+pitch = 69
 
 [node name="Key71" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(416, 0)
+pitch = 71
 
 [node name="Key72" parent="." instance=ExtResource("1_hn3wh")]
 position = Vector2(448, 0)
+pitch = 72
 
 [node name="Key61" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(240, -32)
+pitch = 61
 
 [node name="Key63" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(272, -32)
+pitch = 63
 
 [node name="Key66" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(336, -32)
+pitch = 66
 
 [node name="Key68" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(368, -32)
+pitch = 68
 
 [node name="Key70" parent="." instance=ExtResource("2_xlwfx")]
 position = Vector2(400, -32)
+pitch = 70

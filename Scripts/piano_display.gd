@@ -7,14 +7,14 @@ func _ready() -> void:
 
 
 func set_key_label(note, letter):
-	# note: REALLY should do some validation checking here
+	# Sets key label, as long as pressed key is not null
 	var key = get_node("Key" + str(note))
 	if key.label.text != null:
 		key.label.text = letter
 
 
 func get_key_label(note):
-	# Again, dubious validation
+	# Gets key label, as long as pressed key is not null
 	var key = get_node("Key" + str(note))
 	if key.label.text != null:
 		return key.label.text
