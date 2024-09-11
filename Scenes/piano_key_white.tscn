@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckh6jrvadxf8w"]
+
+[ext_resource type="Script" path="res://Scripts/piano_key.gd" id="1_kowmc"]
+[ext_resource type="Texture2D" uid="uid://bhlhduug4i276" path="res://assets/images/whitekey_off.png" id="1_qlg1p"]
+[ext_resource type="Texture2D" uid="uid://cdl34wsplykdu" path="res://assets/images/whitekey_on.png" id="2_j7gru"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lwbg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qlg1p")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j7gru")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="PianoKeyWhite" type="Node2D"]
+script = ExtResource("1_kowmc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, -29)
+scale = Vector2(0.280625, 0.158565)
+sprite_frames = SubResource("SpriteFrames_1lwbg")
+animation = &"on"
+autoplay = "off"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -9.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "a"
+horizontal_alignment = 1

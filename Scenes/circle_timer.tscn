@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dckuoti5pg70f"]
+
+[ext_resource type="Script" path="res://Scripts/circle_timer.gd" id="1_1ckjq"]
+[ext_resource type="Texture2D" uid="uid://b20cwmeae2cv2" path="res://assets/images/circle_timer.png" id="1_xjcik"]
+
+[node name="CircleTimer" type="Node2D"]
+script = ExtResource("1_1ckjq")
+
+[node name="CircleTimer" type="Sprite2D" parent="."]
+texture = ExtResource("1_xjcik")

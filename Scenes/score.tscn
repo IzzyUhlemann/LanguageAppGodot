@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2hnwmy2uelco"]
+
+[ext_resource type="Script" path="res://score.gd" id="1_u8e2h"]
+
+[node name="Score" type="Node2D"]
+script = ExtResource("1_u8e2h")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = 17.0
+offset_right = 20.0
+offset_bottom = 40.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="HighestLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+text = "0"
+horizontal_alignment = 1

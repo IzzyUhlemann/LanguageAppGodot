@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c14ylb537724h"]
+
+[ext_resource type="Script" path="res://Scripts/alphabet_manager.gd" id="1_7mbde"]
+[ext_resource type="Script" path="res://Scripts/midi_controller.gd" id="1_oqyuq"]
+[ext_resource type="PackedScene" uid="uid://dgjnxbli5f7m3" path="res://Scenes/piano_display.tscn" id="2_ebfb3"]
+[ext_resource type="Texture2D" uid="uid://b4x0q000rtjc3" path="res://assets/images/backGradient.png" id="5_kpmxs"]
+
+[node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_7mbde")
+
+[node name="MIDIController" type="Control" parent="GameManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_oqyuq")
+
+[node name="PianoDisplay" parent="GameManager/MIDIController" instance=ExtResource("2_ebfb3")]
+position = Vector2(-84, 33)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+
+[node name="BackGradient" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 28.75)
+scale = Vector2(0.201172, 0.201172)
+texture = ExtResource("5_kpmxs")

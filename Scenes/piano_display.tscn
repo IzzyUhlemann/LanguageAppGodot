@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgjnxbli5f7m3"]
+
+[ext_resource type="PackedScene" uid="uid://ckh6jrvadxf8w" path="res://Scenes/piano_key_white.tscn" id="1_hn3wh"]
+[ext_resource type="Script" path="res://Scripts/piano_display.gd" id="1_qxgdy"]
+[ext_resource type="PackedScene" uid="uid://cx71p35d7qlbv" path="res://Scenes/piano_key_black.tscn" id="2_xlwfx"]
+
+[node name="PianoDisplay" type="Node2D"]
+script = ExtResource("1_qxgdy")
+
+[node name="Key48" parent="." instance=ExtResource("1_hn3wh")]
+
+[node name="Key50" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(32, 0)
+
+[node name="Key52" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(64, 0)
+
+[node name="Key53" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(96, 0)
+
+[node name="Key55" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(128, 0)
+
+[node name="Key57" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(160, 0)
+
+[node name="Key59" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(192, 0)
+
+[node name="Key49" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(16, -32)
+
+[node name="Key51" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(48, -32)
+
+[node name="Key54" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(112, -32)
+
+[node name="Key56" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(144, -32)
+
+[node name="Key58" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(176, -32)
+
+[node name="Key60" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(224, 0)
+
+[node name="Key62" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(256, 0)
+
+[node name="Key64" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(288, 0)
+
+[node name="Key65" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(320, 0)
+
+[node name="Key67" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(352, 0)
+
+[node name="Key69" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(384, 0)
+
+[node name="Key71" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(416, 0)
+
+[node name="Key72" parent="." instance=ExtResource("1_hn3wh")]
+position = Vector2(448, 0)
+
+[node name="Key61" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(240, -32)
+
+[node name="Key63" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(272, -32)
+
+[node name="Key66" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(336, -32)
+
+[node name="Key68" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(368, -32)
+
+[node name="Key70" parent="." instance=ExtResource("2_xlwfx")]
+position = Vector2(400, -32)

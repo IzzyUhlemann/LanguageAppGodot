@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c14ylb537724h"]
+
+[ext_resource type="Script" path="res://Scripts/alphabet_manager.gd" id="1_7mbde"]
+[ext_resource type="Script" path="res://Scripts/midi_controller.gd" id="1_oqyuq"]
+[ext_resource type="PackedScene" uid="uid://dgjnxbli5f7m3" path="res://Scenes/piano_display.tscn" id="2_ebfb3"]
+[ext_resource type="PackedScene" uid="uid://c2hnwmy2uelco" path="res://Scenes/score.tscn" id="5_aowec"]
+[ext_resource type="Texture2D" uid="uid://d0phlf58cvj42" path="res://assets/images/backParallax.png" id="5_cdxyy"]
+[ext_resource type="Texture2D" uid="uid://dn68pwf0gf1uc" path="res://assets/images/backGradient.png" id="5_kpmxs"]
+
+[node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_7mbde")
+
+[node name="MIDIController" type="Control" parent="GameManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_oqyuq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager/MIDIController"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="PianoDisplay" parent="GameManager/MIDIController/CanvasLayer" instance=ExtResource("2_ebfb3")]
+position = Vector2(63.5, 297)
+
+[node name="BackGradient" type="Sprite2D" parent="GameManager/MIDIController/CanvasLayer"]
+z_index = -1
+position = Vector2(287.938, 259.425)
+scale = Vector2(0.301106, 0.516211)
+texture = ExtResource("5_kpmxs")
+
+[node name="Score" parent="GameManager/MIDIController/CanvasLayer" instance=ExtResource("5_aowec")]
+position = Vector2(23.5, 25)
+
+[node name="Camera2D" type="Camera2D" parent="GameManager"]
+position_smoothing_enabled = true
+
+[node name="BackParallax" type="Sprite2D" parent="GameManager"]
+z_index = -1
+position = Vector2(5170.12, -4.64415)
+scale = Vector2(5.33262, 2.73716)
+texture = ExtResource("5_cdxyy")

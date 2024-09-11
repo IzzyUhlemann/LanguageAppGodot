@@ -1,0 +1,165 @@
+[gd_scene load_steps=30 format=3 uid="uid://bnyjohhdqt7n5"]
+
+[ext_resource type="Script" path="res://Scripts/alphabet_label.gd" id="1_7vlyg"]
+[ext_resource type="Texture2D" uid="uid://dib6me851v6wg" path="res://assets/images/icons/alphabet/1F332.png" id="2_d6l6r"]
+[ext_resource type="Texture2D" uid="uid://m6e6kk2hup1w" path="res://assets/images/icons/alphabet/1F6F3.png" id="3_f5of8"]
+[ext_resource type="Texture2D" uid="uid://cm4ju7i7iicu7" path="res://assets/images/icons/alphabet/1F3E0.png" id="4_en076"]
+[ext_resource type="Texture2D" uid="uid://qoappah3kmht" path="res://assets/images/icons/alphabet/1F4B3.png" id="5_2w23t"]
+[ext_resource type="Texture2D" uid="uid://dtl2aunaj8k0o" path="res://assets/images/icons/alphabet/1F418.png" id="6_q2jxn"]
+[ext_resource type="Texture2D" uid="uid://f3rhijpri4me" path="res://assets/images/icons/alphabet/1F46A.png" id="7_pfrpa"]
+[ext_resource type="Texture2D" uid="uid://b3h2xnmlkl2cp" path="res://assets/images/icons/alphabet/1F408.png" id="8_aeeni"]
+[ext_resource type="Texture2D" uid="uid://bl6qjqjjri1tm" path="res://assets/images/icons/alphabet/1F95A.png" id="9_275cm"]
+[ext_resource type="Texture2D" uid="uid://dv61jk28au702" path="res://assets/images/icons/alphabet/26EA.png" id="10_xgq7f"]
+[ext_resource type="Texture2D" uid="uid://dhe3365ml0dca" path="res://assets/images/icons/alphabet/E2CE.png" id="11_ay56p"]
+[ext_resource type="Texture2D" uid="uid://bqjo0nl4jjbhc" path="res://assets/images/icons/alphabet/1F95D.png" id="12_8t0fq"]
+[ext_resource type="Texture2D" uid="uid://ct1imnmyembo8" path="res://assets/images/icons/alphabet/1F981.png" id="13_fhu5a"]
+[ext_resource type="Texture2D" uid="uid://dqwwv76oc8vdx" path="res://assets/images/icons/alphabet/1F590-1F3FE.png" id="14_amwun"]
+[ext_resource type="Texture2D" uid="uid://bjpb8yafadirf" path="res://assets/images/icons/alphabet/2601.png" id="15_eb1xo"]
+[ext_resource type="Texture2D" uid="uid://dbkr5fjstwp32" path="res://assets/images/icons/alphabet/1F360.png" id="16_7yht2"]
+[ext_resource type="Texture2D" uid="uid://csmxhcrm7rke6" path="res://assets/images/icons/alphabet/1F441.png" id="17_8tjkj"]
+[ext_resource type="Texture2D" uid="uid://dbc3fy7imo7dh" path="res://assets/images/icons/alphabet/1F350.png" id="18_mxr3i"]
+[ext_resource type="Texture2D" uid="uid://cyjyi54rbefk4" path="res://assets/images/icons/alphabet/1F9C0.png" id="19_3xq42"]
+[ext_resource type="Texture2D" uid="uid://b2seklu2osqem" path="res://assets/images/icons/alphabet/1F438.png" id="20_003xm"]
+[ext_resource type="Texture2D" uid="uid://8pm3vm1m1vfy" path="res://assets/images/icons/alphabet/2600.png" id="21_3c7rs"]
+[ext_resource type="Texture2D" uid="uid://c6twlrd2i7rga" path="res://assets/images/icons/alphabet/1F42F.png" id="22_yi4q3"]
+[ext_resource type="Texture2D" uid="uid://8xgbe6kkpfme" path="res://assets/images/icons/alphabet/1F347.png" id="23_ydf0q"]
+[ext_resource type="Texture2D" uid="uid://kksklxxg5ux8" path="res://assets/images/icons/alphabet/1F377.png" id="24_ata0x"]
+[ext_resource type="Texture2D" uid="uid://bfc8xy1aixhfp" path="res://assets/images/icons/alphabet/E254.png" id="25_4itob"]
+[ext_resource type="Texture2D" uid="uid://bqsbt7co2lt6s" path="res://assets/images/icons/alphabet/1F941.png" id="26_wnt7w"]
+[ext_resource type="Texture2D" uid="uid://dl5c4l1dqo8ap" path="res://assets/images/icons/alphabet/1FAD9.png" id="27_1deqj"]
+[ext_resource type="Texture2D" uid="uid://b8urvhd1xgb3g" path="res://assets/images/icons/alphabet/1F98A.png" id="28_xlgvu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4udlg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d6l6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f5of8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_en076")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2w23t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q2jxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pfrpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aeeni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_275cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xgq7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ay56p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8t0fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fhu5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_amwun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_eb1xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7yht2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8tjkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mxr3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3xq42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_003xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3c7rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yi4q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ydf0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ata0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_4itob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wnt7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1deqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_xlgvu")
+}],
+"loop": true,
+"name": &"alphabet",
+"speed": 0.0
+}]
+
+[node name="AlphabetLabel" type="Node2D"]
+script = ExtResource("1_7vlyg")
+
+[node name="letter_label" type="Label" parent="."]
+z_index = 1
+offset_left = -85.0
+offset_top = -174.0
+offset_right = 84.0
+offset_bottom = 175.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 256
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="primary_label" type="Label" parent="."]
+z_index = 1
+offset_left = -329.0
+offset_top = 19.0
+offset_right = 330.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0.803317, 1, 0.52837, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "árbol"
+horizontal_alignment = 1
+
+[node name="secondary_label" type="Label" parent="."]
+z_index = 1
+offset_left = -220.0
+offset_top = 132.0
+offset_right = 221.0
+offset_bottom = 199.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "tree"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -29)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_4udlg")
+animation = &"alphabet"
+autoplay = "alphabet"

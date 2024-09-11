@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://drqjasvdkdird"]
+
+[ext_resource type="Script" path="res://Scripts/midi_controller.gd" id="1_oqyuq"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_rpfb3"]
+[ext_resource type="PackedScene" uid="uid://dgjnxbli5f7m3" path="res://Scenes/piano_display.tscn" id="2_ebfb3"]
+[ext_resource type="FontFile" uid="uid://biaagyrb34562" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_hia57"]
+[ext_resource type="FontFile" uid="uid://cs7ag7g2a4is5" path="res://assets/fonts/PixelOperator8.ttf" id="3_ttyrs"]
+[ext_resource type="Texture2D" uid="uid://b4x0q000rtjc3" path="res://assets/images/backGradient.png" id="5_kpmxs"]
+
+[node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_rpfb3")
+
+[node name="TestLabels" type="Node" parent="GameManager"]
+
+[node name="InputLabel" type="Label" parent="GameManager/TestLabels"]
+offset_left = -24.0
+offset_top = 5.0
+offset_right = 24.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0.919083, 0.83982, 1.54018e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ttyrs")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+
+[node name="spanishLabel" type="Label" parent="GameManager/TestLabels"]
+visible = false
+offset_left = -94.0
+offset_top = -54.0
+offset_right = 94.0
+offset_bottom = -9.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "vaca"
+horizontal_alignment = 1
+
+[node name="englishLabel" type="Label" parent="GameManager/TestLabels"]
+offset_left = -52.0
+offset_top = -15.0
+offset_right = 52.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hia57")
+theme_override_font_sizes/font_size = 8
+text = "cow"
+horizontal_alignment = 1
+
+[node name="MIDIController" type="Control" parent="GameManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_oqyuq")
+
+[node name="PianoDisplay" parent="GameManager/MIDIController" instance=ExtResource("2_ebfb3")]
+position = Vector2(-84, 33)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+
+[node name="BackGradient" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 28.75)
+scale = Vector2(0.201172, 0.201172)
+texture = ExtResource("5_kpmxs")
