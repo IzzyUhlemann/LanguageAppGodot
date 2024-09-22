@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cx71p35d7qlbv"]
 
 [ext_resource type="Texture2D" uid="uid://bkampsk51ir7g" path="res://assets/images/blackkey_off.png" id="1_f2u8y"]
-[ext_resource type="Script" path="res://Scripts/piano_key.gd" id="1_v4kea"]
+[ext_resource type="Script" path="res://scripts/piano_key.gd" id="1_v4kea"]
 [ext_resource type="Texture2D" uid="uid://btrkg1mrgiwi0" path="res://assets/images/blackkey_on.png" id="2_1bgr1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3wu30"]
@@ -36,9 +36,9 @@ autoplay = "off"
 
 [node name="Label" type="Label" parent="."]
 z_index = 1
-offset_left = -9.0
+offset_left = -13.0
 offset_top = -29.0
-offset_right = 10.0
+offset_right = 13.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 28

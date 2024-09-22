@@ -22,9 +22,13 @@ func get_key_label(note):
 		return null
 
 
-func play_note(note):
+func play_note(note, velocity):
 	# Get number associated with midi note and play correct key
-	get_node("Key" + str(note)).key_pressed()
+	var key = get_node("Key" + str(note))
+	if velocity > 0:
+		key.key_on()
+	else:
+		key.key_off()
 
 
 func reset_labels():

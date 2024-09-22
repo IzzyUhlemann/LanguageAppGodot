@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://daj4a7ba3yhry"]
+
+[ext_resource type="Script" path="res://scripts/alphabet_manager.gd" id="1_njdy3"]
+[ext_resource type="Script" path="res://scripts/midi_controller.gd" id="2_mo1o7"]
+[ext_resource type="PackedScene" uid="uid://dgjnxbli5f7m3" path="res://scenes/piano_display.tscn" id="3_e2nko"]
+[ext_resource type="Texture2D" uid="uid://dn68pwf0gf1uc" path="res://assets/images/backGradient.png" id="4_62voi"]
+[ext_resource type="PackedScene" uid="uid://c2hnwmy2uelco" path="res://scenes/score.tscn" id="5_l5tko"]
+[ext_resource type="Texture2D" uid="uid://d0phlf58cvj42" path="res://assets/images/backParallax.png" id="6_8u2ip"]
+[ext_resource type="AudioStream" uid="uid://b046a4l6vnpls" path="res://sounds/music/Spanish Piano Main Menu.mp3" id="7_c3xnd"]
+[ext_resource type="PackedScene" uid="uid://crnmlfvssow10" path="res://scenes/transition_screen.tscn" id="7_purvp"]
+
+[node name="Game2" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_njdy3")
+level_path = "res://gui/level_select_screen.tscn"
+language_path = "res://language/music.txt"
+label_type = 1
+
+[node name="MIDIController" type="Control" parent="GameManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_mo1o7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager/MIDIController"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="PianoDisplay" parent="GameManager/MIDIController/CanvasLayer" instance=ExtResource("3_e2nko")]
+position = Vector2(63.5, 297)
+
+[node name="BackGradient" type="Sprite2D" parent="GameManager/MIDIController/CanvasLayer"]
+z_index = -1
+position = Vector2(287.938, 259.425)
+scale = Vector2(0.301106, 0.516211)
+texture = ExtResource("4_62voi")
+
+[node name="Score" parent="GameManager/MIDIController/CanvasLayer" instance=ExtResource("5_l5tko")]
+position = Vector2(23.5, 25)
+
+[node name="Camera2D" type="Camera2D" parent="GameManager"]
+position_smoothing_enabled = true
+
+[node name="BackParallax" type="Sprite2D" parent="GameManager"]
+z_index = -1
+position = Vector2(5170.12, -4.64415)
+scale = Vector2(5.33262, 2.73716)
+texture = ExtResource("6_8u2ip")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("7_c3xnd")
+
+[node name="TransitionScreen" parent="GameManager" instance=ExtResource("7_purvp")]
+
+[connection signal="transitioned" from="GameManager/TransitionScreen" to="GameManager" method="_on_transition_screen_transitioned"]

@@ -1,9 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw24cwgg4cejw"]
+[gd_scene load_steps=9 format=3 uid="uid://cw24cwgg4cejw"]
 
 [ext_resource type="Theme" uid="uid://d15rsb5jyxtgp" path="res://gui/default_theme.tres" id="1_q2hyr"]
-[ext_resource type="Script" path="res://gui/level_select_screen.gd" id="2_1jfsw"]
+[ext_resource type="Script" path="res://scripts/level_select_screen.gd" id="2_1jfsw"]
+[ext_resource type="Script" path="res://scripts/midi_controller.gd" id="3_1j4ta"]
+[ext_resource type="Script" path="res://scripts/level_select_manager.gd" id="3_jojm6"]
+[ext_resource type="PackedScene" uid="uid://dgjnxbli5f7m3" path="res://scenes/piano_display.tscn" id="4_y3cih"]
+[ext_resource type="Texture2D" uid="uid://dn68pwf0gf1uc" path="res://assets/images/backGradient.png" id="5_a4h1g"]
+[ext_resource type="AudioStream" uid="uid://b046a4l6vnpls" path="res://sounds/music/Spanish Piano Main Menu.mp3" id="7_51u7h"]
+[ext_resource type="PackedScene" uid="uid://crnmlfvssow10" path="res://scenes/transition_screen.tscn" id="8_l3urq"]
 
-[node name="LevelSelectScreen" type="Control"]
+[node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_jojm6")
+
+[node name="MIDIController" type="Control" parent="GameManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_1j4ta")
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager/MIDIController"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="PianoDisplay" parent="GameManager/MIDIController/CanvasLayer" instance=ExtResource("4_y3cih")]
+position = Vector2(63.5, 297)
+
+[node name="BackGradient" type="Sprite2D" parent="GameManager/MIDIController/CanvasLayer"]
+z_index = -1
+position = Vector2(287.938, 259.425)
+scale = Vector2(0.301106, 0.516211)
+texture = ExtResource("5_a4h1g")
+
+[node name="LevelSelectScreen" type="Control" parent="GameManager"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +47,7 @@ theme = ExtResource("1_q2hyr")
 script = ExtResource("2_1jfsw")
 dir_path = "res://levels"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="GameManager/LevelSelectScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.282353, 0.533333, 0.505882, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="GameManager/LevelSelectScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,18 +68,25 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameManager/LevelSelectScreen/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 32
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="GameManager/LevelSelectScreen/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Select Level"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="GameManager/LevelSelectScreen/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("7_51u7h")
+
+[node name="TransitionScreen" parent="GameManager" instance=ExtResource("8_l3urq")]
+
+[connection signal="transitioned" from="GameManager/TransitionScreen" to="GameManager" method="_on_transition_screen_transitioned"]

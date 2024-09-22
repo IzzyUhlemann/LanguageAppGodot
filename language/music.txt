@@ -1,0 +1,9 @@
+ , ,23EA
+eighth note,,1F3B6
+treble cleff,,1F3BC
+keyboard,,1F3B9
+saxophone,,1F3B7
+guitar,,1F3B8
+violin,,1F3BB
+banjo,,1FA95
+ , ,23E9

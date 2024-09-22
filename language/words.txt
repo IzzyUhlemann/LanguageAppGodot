@@ -1,0 +1,29 @@
+ , ,23EA
+agua,water,1F4A7
+barco,ship,1F6F3
+casa,home,1F3E0
+dinero,money,1F4B5
+elefante,elephant,1F418
+familia,family,1F46A
+gato,cat,1F408
+huevo,egg,1F95A
+iglesia,church,26EA
+jamon,ham,E2CE
+kiwi,kiwi,1F95D
+león,lion,1F981
+mano,hand,1F590-1F3FE
+nube,cloud,2601
+ñame,yam,1F360
+ojo,eye,1F441
+pera,pear,1F350
+queso,cheese,1F9C0
+rana,frog,1F438
+sol,sun,2600
+tigre,tiger,1F42F
+uvas,grapes,1F347
+vino,wine,1F377
+wifi,wifi,E254
+xilófono,xylophone,1F941
+yogur,yogurt,1FAD9
+zorro,fox,1F98A
+ , ,23E9

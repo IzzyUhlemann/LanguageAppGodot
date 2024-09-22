@@ -1,9 +1,16 @@
 extends Node2D
 
+enum LabelType {
+	ALPHABET,
+	SYMBOL,
+	WORD,
+}
+
+@export var label_type: LabelType
 @onready var letter_label: Label = $letter_label
 @onready var primary_label: Label = $primary_label
 @onready var secondary_label: Label = $secondary_label
-@onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,20 +33,46 @@ func set_secondary_label(input):
 		secondary_label.text = input
 
 
-func set_image(input):
-	if sprite_2d.frame != null:
-		sprite_2d.frame = input
+func set_image(list,input):
+	for i in list.size() - 1:
+		if(list[i][2] == input):
+			var filepath = "res://assets/images/icons/alphabet/" + str(list[i][2]) + ".png" 
+			print(filepath)
+			var new_texture = load(filepath)
+			sprite.set_texture(new_texture)
 
 
 func display_word():
-	primary_label.show()
-	secondary_label.show()
-	sprite_2d.show()
-	letter_label.hide()
+	if label_type == LabelType.ALPHABET:
+		primary_label.show()
+		secondary_label.show()
+		sprite.show()
+		letter_label.hide()
+	elif label_type == LabelType.SYMBOL:
+		primary_label.show()
+		secondary_label.show()
+		sprite.show()
+		letter_label.hide()
+	elif label_type == LabelType.WORD:
+		primary_label.show()
+		secondary_label.show()
+		sprite.show()
+		letter_label.hide()
 
 
 func hide_word():
-	primary_label.hide()
-	secondary_label.hide()
-	sprite_2d.hide()
-	letter_label.show()
+	if label_type == LabelType.ALPHABET:
+		primary_label.hide()
+		secondary_label.hide()
+		sprite.hide()
+		letter_label.show()
+	elif label_type == LabelType.SYMBOL:
+		primary_label.hide()
+		secondary_label.hide()
+		sprite.show()
+		letter_label.hide()
+	elif label_type == LabelType.WORD:
+		primary_label.show()
+		secondary_label.hide()
+		sprite.hide()
+		letter_label.hide()

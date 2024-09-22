@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnyjohhdqt7n5"]
+
+[ext_resource type="Script" path="res://scripts/alphabet_label.gd" id="1_lgw4k"]
+
+[node name="AlphabetLabel" type="Node2D"]
+script = ExtResource("1_lgw4k")
+
+[node name="letter_label" type="Label" parent="."]
+z_index = 1
+offset_left = -85.0
+offset_top = -174.0
+offset_right = 84.0
+offset_bottom = 175.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 256
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="primary_label" type="Label" parent="."]
+z_index = 1
+offset_left = -329.0
+offset_top = 19.0
+offset_right = 330.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0.803317, 1, 0.52837, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "árbol"
+horizontal_alignment = 1
+
+[node name="secondary_label" type="Label" parent="."]
+z_index = 1
+offset_left = -220.0
+offset_top = 132.0
+offset_right = 221.0
+offset_bottom = 199.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "tree"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckh6jrvadxf8w"]
 
-[ext_resource type="Script" path="res://Scripts/piano_key.gd" id="1_kowmc"]
+[ext_resource type="Script" path="res://scripts/piano_key.gd" id="1_kowmc"]
 [ext_resource type="Texture2D" uid="uid://bhlhduug4i276" path="res://assets/images/whitekey_off.png" id="1_qlg1p"]
 [ext_resource type="Texture2D" uid="uid://cdl34wsplykdu" path="res://assets/images/whitekey_on.png" id="2_j7gru"]
 
@@ -34,9 +34,9 @@ animation = &"on"
 autoplay = "off"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -9.0
+offset_left = -14.0
 offset_top = -24.0
-offset_right = 10.0
+offset_right = 14.0
 offset_bottom = 21.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28

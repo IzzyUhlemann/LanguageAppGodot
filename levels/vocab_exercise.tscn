@@ -1,0 +1,162 @@
+[gd_scene load_steps=11 format=3 uid="uid://drqjasvdkdird"]
+
+[ext_resource type="Script" path="res://scripts/midi_controller.gd" id="1_oqyuq"]
+[ext_resource type="Script" path="res://scripts/vocab_manager.gd" id="1_r5r6w"]
+[ext_resource type="PackedScene" uid="uid://dgjnxbli5f7m3" path="res://scenes/piano_display.tscn" id="2_ebfb3"]
+[ext_resource type="PackedScene" uid="uid://dgqi5ecsyruws" path="res://scenes/word_label.tscn" id="3_3i116"]
+[ext_resource type="FontFile" uid="uid://cs7ag7g2a4is5" path="res://assets/fonts/PixelOperator8.ttf" id="3_ttyrs"]
+[ext_resource type="Texture2D" uid="uid://dn68pwf0gf1uc" path="res://assets/images/backGradient.png" id="5_kpmxs"]
+
+[sub_resource type="Animation" id="Animation_8u8ua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.919083, 0.83982, 1.54018e-06, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_5x3pb"]
+resource_name = "label_match"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.917647, 0.839216, 0, 1), Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(0.917647, 0.839216, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_new_word"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_am3km"]
+resource_name = "label_mismatch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.917647, 0.839216, 0, 1), Color(0.750939, 0, 0.101285, 1), Color(0.917647, 0.839216, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_prnlw"]
+_data = {
+"RESET": SubResource("Animation_8u8ua"),
+"label_match": SubResource("Animation_5x3pb"),
+"label_mismatch": SubResource("Animation_am3km")
+}
+
+[node name="Game2" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_r5r6w")
+
+[node name="TestLabels" type="Node" parent="GameManager"]
+
+[node name="InputLabel" type="Label" parent="GameManager/TestLabels"]
+z_index = 1
+offset_left = -24.0
+offset_top = 5.0
+offset_right = 24.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0.919083, 0.83982, 1.54018e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ttyrs")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameManager/TestLabels/InputLabel"]
+libraries = {
+"": SubResource("AnimationLibrary_prnlw")
+}
+
+[node name="WordLabel" parent="GameManager/TestLabels" instance=ExtResource("3_3i116")]
+z_index = 1
+
+[node name="MIDIController" type="Control" parent="GameManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_oqyuq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager/MIDIController"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="PianoDisplay" parent="GameManager/MIDIController/CanvasLayer" instance=ExtResource("2_ebfb3")]
+position = Vector2(62.5, 296.5)
+
+[node name="BackGradient" type="Sprite2D" parent="GameManager/MIDIController/CanvasLayer"]
+z_index = -1
+position = Vector2(288.062, 264.875)
+scale = Vector2(0.301758, 0.475586)
+texture = ExtResource("5_kpmxs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)

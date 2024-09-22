@@ -11,14 +11,20 @@ config_version=5
 [application]
 
 config/name="Language App"
-run/main_scene="res://Scenes/alphabet_display.tscn"
+run/main_scene="res://gui/level_select_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="res://assets/images/logo/HurleyLogo.png"
 config/icon="res://icon.svg"
+
+[audio]
+
+general/text_to_speech=true
 
 [autoload]
 
-SaveLoad="*res://save_load.gd"
-Score="*res://score.gd"
+SaveLoad="*res://scripts/save_load.gd"
+Score="*res://scripts/score.gd"
 
 [display]
 
